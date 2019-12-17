@@ -14,13 +14,17 @@ $(document).ready(function() {
   });
   // Display checkout button on order placement
   $("#checkoutBtn").click(function() {
-    let prices, totalCharge;
-    prices = $("#pizzaCart tbody td:last-child").map(function() {
-      return parseInt($(this).html());
-    });
-    totalCharge = 0;
-    for (let i = 0; i < prices.length; i++) {
-      totalCharge += prices[i];
+    var delivery = $("#delivery :checked").val();
+    var location = $("#deliveryLocation").val()
+    var allCharge = parseInt($("#tt-charge").html());
+
+    if (delivery === "deliver") {
+      alert(`Thanks for shopping with Downtown Pizza.
+      Your total charge is ${allCharge + 300}/=
+      Your delivery is en-route to ${location}`);
+    } else {
+      alert(`Thanks for shopping with Downtown Pizza.
+      Your total charge is ${allCharge}`);
     }
   });
 
