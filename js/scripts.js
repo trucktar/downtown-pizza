@@ -5,12 +5,31 @@ $(document).ready(function() {
     crust = $("#pizzaCrust :selected");
     toppings = $("#pizzaToppings :checked");
 
-    count = parseInt($("#pizzaCount input").val());
+    count = parseInt($("#pizzaCount").val());
 
     let pizzaOrder = new PizzaOrder(size, crust, toppings, count);
     addToCart(pizzaOrder);
 
     event.preventDefault();
+  });
+  // Display checkout button on order placement
+  $("#checkoutBtn").click(function() {
+    let prices, totalCharge;
+    prices = $("#pizzaCart tbody td:last-child").map(function() {
+      return parseInt($(this).html());
+    });
+    totalCharge = 0;
+    for (let i = 0; i < prices.length; i++) {
+      totalCharge += prices[i];
+    }
+  });
+
+  // Display delivery location form field
+  $("#pick-up").click(function() {
+    $("#deliveryLocation").hide();
+  });
+  $("#deliver").click(function() {
+    $("#deliveryLocation").show();
   });
 });
 
@@ -52,4 +71,9 @@ function addToCart(order) {
                                   <td>${toppings}</td>
                                   <td>${order.getPrice()}</td>
                                 </tr>`);
+
+  var currentTotalCharge = parseInt($("#tt-charge").html());
+  $("#tt-charge").html(currentTotalCharge + order.getPrice());
+  $("#checkoutBtn").show();
+  $("#delivery").show();
 }
