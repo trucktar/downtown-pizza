@@ -7,6 +7,9 @@ $(document).ready(function() {
 
     count = parseInt($("#pizzaCount input").val());
 
+    let pizzaOrder = new PizzaOrder(size, crust, toppings, count);
+    addToCart(pizzaOrder);
+
     event.preventDefault();
   });
 });
@@ -35,3 +38,18 @@ PizzaOrder.prototype.getPrice = function() {
   let orderPrice = (sizePrice + crustPrice + toppingsTotalPrice) * this.count;
   return orderPrice;
 };
+// Add pizza to cart
+function addToCart(order) {
+  let toppings = order.toppings
+    .map(function() {
+      return this.id;
+    })
+    .get()
+    .join();
+  $("#pizzaCart tbody").append(`<tr>
+                                  <td>${order.size.html()}</td>
+                                  <td>${order.crust.html()}</td>
+                                  <td>${toppings}</td>
+                                  <td>${order.getPrice()}</td>
+                                </tr>`);
+}
