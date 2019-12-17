@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-check">
                   <input class="form-check-input" id="pepperoni" type="checkbox" value="45" />
-                  <label class="form-check-label" for="pepperoni">Pepperoni  @45/=Passion</label>
+                  <label class="form-check-label" for="pepperoni">Pepperoni Passion @45/=</label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input" id="ham" type="checkbox" value="70" />
@@ -69,9 +69,9 @@
               </div>
             </div>
           </fieldset>
-          <div id="pizzaCount" class="form-group row align-items-center">
-            <label class="col-sm-3 col-form-label" for="pizzaCrust">Number of Pizzas</label>
-            <input class="form-control col-sm-9" type="number" min="1" />
+          <div class="form-group row align-items-center">
+            <label class="col-sm-3 col-form-label" for="pizzaCount">Number of Pizzas</label>
+            <input class="form-control col-sm-9" id="pizzaCount" type="number" min="1" />
           </div>
           <div class="form-group mr-n3">
             <button class="btn btn-outline-success form-control" type="submit">Place Your Order</button>
@@ -90,7 +90,25 @@
             </thead>
             <tbody></tbody>
           </table>
-          <button class="btn btn-outline-success form-control">Checkout</button>
+          <hr />
+          <p>The total charge is <span id="tt-charge">0</span>/=</p>
+          <form id="delivery">
+            <p>Would you like a delivery at 300/=?</p>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" name="delivery" type="radio" id="pick-up" value="pick" checked />
+              <label class="form-check-label" for="pick-up">
+                Pick-Up
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" name="delivery" type="radio" id="deliver" value="deliver" />
+              <label class="form-check-label" for="deliver">
+                Delivery
+              </label>
+            </div>
+            <input class="form-control" id="deliveryLocation" type="text" placeholder="Delivery Location..." />
+          </form>
+          <button id="checkoutBtn" class="btn btn-outline-success form-control">Checkout</button>
         </div>
       </div>
     </div>
