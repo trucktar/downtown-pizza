@@ -11,3 +11,10 @@ $(document).ready(function() {
   });
 });
 
+// Pizza Constructor
+function PizzaOrder(pizzaSize, pizzaCrust, pizzaToppings, pizzaCount) {
+  this.size = pizzaSize;
+  this.crust = pizzaCrust;
+  this.toppings = pizzaToppings; //toppings array
+  this.count = pizzaCount;
+}
