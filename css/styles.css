@@ -1,0 +1,5 @@
+#checkoutBtn,
+#delivery,
+#delivery #deliveryLocation {
+  display: none;
+}
