@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
       rel="stylesheet"
@@ -14,12 +14,78 @@
     <title>Downtown Pizza</title>
   </head>
   <body>
-
+    <div class="container">
+      <div class="row justify-content-around">
+        <form id="pizzaCraft" class="col-md-5">
+          <h1>Pizza Craft</h1>
+          <div class="form-group row align-items-center">
+            <label class="col-sm-3 col-form-label" for="pizzaSize">Size of Pizza</label>
+            <select id="pizzaSize" class="form-control col-sm-9">
+              <option value="300">Small</option>
+              <option value="500">Medium</option>
+              <option value="800">Large</option>
+            </select>
+          </div>
+          <div class="form-group row align-items-center">
+            <label class="col-sm-3 col-form-label" for="pizzaCrust">Type of Crust</label>
+            <select id="pizzaCrust" class="form-control col-sm-9">
+              <option value="100">Thin Crust</option>
+              <option value="200">Regular</option>
+              <option value="300">Thick Crust</option>
+            </select>
+          </div>
+          <fieldset id="pizzaToppings" class="form-group" form="pizzaCraft">
+            <div class="row align-items-center">
+              <legend class="col-form-label col-sm-3">Extra Toppings</legend>
+              <div class="col-sm-9">
+                <div class="form-check">
+                  <input class="form-check-input" id="chicken" type="checkbox" value="30" />
+                  <label class="form-check-label" for="chicken">Grilled Chicken</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="bacon" type="checkbox" value="50" />
+                  <label class="form-check-label" for="bacon">Beef Bacon</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="pepperoni" type="checkbox" value="45" />
+                  <label class="form-check-label" for="pepperoni">Pepperoni Passion</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="ham" type="checkbox" value="70" />
+                  <label class="form-check-label" for="ham">Beef Ham</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="mushroom" type="checkbox" value="20" />
+                  <label class="form-check-label" for="mushroom">Fresh Mushrooms</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="pineapple" type="checkbox" value="60" />
+                  <label class="form-check-label" for="pineapple">Pineapple</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" id="cheese" type="checkbox" value="70" />
+                  <label class="form-check-label" for="cheese">Extra Cheese</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <div id="pizzaCount" class="form-group row align-items-center">
+            <label class="col-sm-3 col-form-label" for="pizzaCrust">Number of Pizzas</label>
+            <input class="form-control col-sm-9" type="number" min="1" />
+          </div>
+          <div class="form-group mr-n3">
+            <button class="btn btn-outline-success form-control" type="submit">Place Your Order</button>
+          </div>
+        </form>
+        
+      </div>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
+    <script src="js/jquery-3.4.1.js"></script>
     <script src="js/scripts.js"></script>
   </body>
 </html>
