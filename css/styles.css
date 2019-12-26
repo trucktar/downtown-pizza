@@ -1,11 +1,14 @@
+body {
+  font-family: "Quicksand", sans-serif; 
+}
 #checkoutBtn,
 #delivery,
 #delivery #deliveryLocation {
   display: none;
 }
-.jumbotron{
-    background-image: url(../img/header.jpg);
-    background-position: center;
-    background-size: cover;
-    color: white;
+.jumbotron {
+  background-image: url(../img/header.jpg);
+  background-position: center;
+  background-size: cover;
+  color: white;
 }
