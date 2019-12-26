@@ -1,0 +1,10 @@
+tbody:nth-of-type(n + 2),
+td:nth-of-type(n + 2) {
+  display: none;
+}
+
+tr:not(:only-child):hover {
+  cursor: pointer;
+  background-color: turquoise;
+  transition: background-color 0.5s;
+}
